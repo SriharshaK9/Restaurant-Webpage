@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ModernBite — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">ModernBite</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="reserve.html">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="hero-text">
+      <h2>Fresh flavors. Local ingredients.</h2>
+      <p>Welcome to <strong>ModernBite</strong> — small plates, big smiles.  
+         Discover our seasonal menu crafted with love, and reserve your table today.</p>
+      <a class="btn" href="reserve.html">Reserve a Table</a>
+    </div>
+
+    <!-- Carousel -->
+    <div class="hero-carousel">
+      <div class="slide active" style="background-image:url('https://picsum.photos/id/292/800/600')"></div>
+      <div class="slide" style="background-image:url('https://picsum.photos/id/1080/800/600')"></div>
+      <div class="slide" style="background-image:url('https://picsum.photos/id/102/800/600')"></div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© ModernBite — Demo. Open-source demo for interview.</small>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.hero-carousel .slide');
+    let current = 0;
+    function showSlide(i){ slides.forEach((s,idx)=>s.classList.toggle('active', idx===i)); }
+    document.querySelector('.hero-carousel .prev').onclick=()=>{
+      current=(current-1+slides.length)%slides.length; showSlide(current);
+    };
+    document.querySelector('.hero-carousel .next').onclick=()=>{
+      current=(current+1)%slides.length; showSlide(current);
+    };
+    setInterval(()=>{ current=(current+1)%slides.length; showSlide(current); },5000);
+  </script>
+</body>
+</html>

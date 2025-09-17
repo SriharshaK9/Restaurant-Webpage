@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ModernBite — Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">ModernBite</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="reserve.html">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-controls">
+      <input id="search" placeholder="Search items..." />
+      <div>
+        <button class="filter-btn active" data-cat="All">All</button>
+        <button class="filter-btn" data-cat="Starters">Starters</button>
+        <button class="filter-btn" data-cat="Mains">Mains</button>
+        <button class="filter-btn" data-cat="Desserts">Desserts</button>
+        <button class="filter-btn" data-cat="Drinks">Drinks</button>
+      </div>
+    </div>
+    <div id="menu-items" class="menu-grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© ModernBite — Demo.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

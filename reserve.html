@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ModernBite — Reservations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">ModernBite</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="reserve.html" class="active">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container reserve-section">
+    <h2>Reserve a Table</h2>
+    <form id="reservation-form" class="form-grid" novalidate>
+      <label>Name <input type="text" id="rname" required /></label>
+      <label>Email <input type="email" id="remail" required /></label>
+      <label>Phone <input type="tel" id="rphone" pattern="^[0-9 +()-]{7,20}$" required /></label>
+      <label>Date <input type="date" id="rdate" required /></label>
+      <label>Time <input type="time" id="rtime" required /></label>
+      <label>Guests <input type="number" id="rguests" min="1" max="20" value="2" required /></label>
+      <label class="full">Special requests
+        <textarea id="rnotes" rows="3"></textarea>
+      </label>
+      <div class="form-actions full">
+        <button type="submit" class="btn">Confirm Reservation</button>
+        <button type="button" id="view-reservations" class="btn alt">View Saved</button>
+      </div>
+    </form>
+    <div id="reservation-result" class="result" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© ModernBite — Demo.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
